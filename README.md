@@ -14,6 +14,7 @@ Pascal
 
 * http://www.helpchm.ru/view_post.php?id=119 - Иллюстрированный самоучитель по Turbo Pascal 
 * http://codingrus.ru/readarticle.php?article_id=2239 - Лекции по Turbo Pascal
+* http://www.lazarus.freepascal.org - Lazarus
 
 C/C++
 -----
