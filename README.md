@@ -14,3 +14,10 @@ Pascal
 
 * http://www.helpchm.ru/view_post.php?id=119 - Иллюстрированный самоучитель по Turbo Pascal 
 * http://codingrus.ru/readarticle.php?article_id=2239 - Лекции по Turbo Pascal
+
+C/C++
+-----
+* http://www.microsoft.com/visualstudio/rus/downloads#d-2012-express - Visual Studio 2012 Express
+* http://qt-project.org/downloads - Qt
+* http://www.codeblocks.org/downloads - Code::Blocks
+ 
