@@ -9,3 +9,5 @@ __history
 *.dll
 bin/*
 Win32
+bin
+obj
