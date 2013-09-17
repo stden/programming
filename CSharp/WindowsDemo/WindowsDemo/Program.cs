@@ -1,12 +1,4 @@
-﻿/*
- * Created by SharpDevelop.
- * User: Денис
- * Date: 10.09.2013
- * Time: 21:06
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace WindowsDemo
@@ -22,9 +14,47 @@ namespace WindowsDemo
 		[STAThread]
 		private static void Main(string[] args)
 		{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new MainForm());
+//			Application.EnableVisualStyles();
+//			Application.SetCompatibleTextRenderingDefault(false);
+//			Application.Run(new MainForm());
+			
+			// ООП: классы и обьекты
+			
+            // Hello World на С#
+			//Console.WriteLine("Hello world!");
+			//Console.ReadLine();
+
+			// Используем созданный нами класс Rectangle
+			Rectangle r = new Rectangle();
+			r.a = 3;
+			r.b = 20;
+			Console.WriteLine("Площадь прямоугольника: "+r.Area());
+			
+			Rectangle r2 = new Rectangle();
+			r2.a = 10;
+			r2.b = 13;
+			Console.WriteLine("r2 = "+r2.Area());
+			
+			Rectangle r3 = new Rectangle(5, 10);
+			Console.WriteLine("r3 = "+r3.Area());
+			
+			ColoredRectangle cr = new ColoredRectangle();
+			cr.a = 10;
+			cr.b = 12;
+			cr.Color = 1234;
+			
+			
+			Shape[] shapes = new Shape[2];
+			shapes[0] = new Point(2,3);
+			shapes[1] = new Square(new Point(0,0), new Point(10,10));
+			//shapes[2] 
+			foreach(Shape s in shapes){
+				Console.WriteLine(s.draw());
+			}
+			
+			
+			Console.ReadLine();
+			
 		}
 		
 	}
