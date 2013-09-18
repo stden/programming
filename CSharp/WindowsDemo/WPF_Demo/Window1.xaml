@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="WPF_Demo.Window1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="WPF_Demo"
+	Height="300"
+	Width="300">
+	<Grid>
+		<Button
+			Content="Button"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="16,29,0,0"
+			Width="79"
+			Height="24" />
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="0.393103448275862*" />
+			<ColumnDefinition
+				Width="0.606896551724138*" />
+		</Grid.ColumnDefinitions>
+	</Grid>
+</Window>

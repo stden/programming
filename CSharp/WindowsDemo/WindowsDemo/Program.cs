@@ -26,11 +26,12 @@ namespace WindowsDemo
 			//Console.ReadLine();
 
 
-			// PolymorphDemo();
+			PolymorphismDemo();
 			
 			//new WindowsDemo.Square();
 			new WindowsDemo.GetSetDemo.Square();
 			
+			// Можно не обьявлять тип переменной явно
 			var Square3 = new Square3();
 			Square3.Area = 400;
 			Console.WriteLine("Сторона: "+Square3.Side);
@@ -38,11 +39,11 @@ namespace WindowsDemo
 			Console.WriteLine("Сторона: "+Square3.Side+" Площадь: "+Square3.Area);
 			
 			
-			Console.ReadLine();
-			
+			Console.ReadLine();			
 		}
 
-		static void PolymorphDemo()
+		// Полиморфизм
+		static void PolymorphismDemo()
 		{
 			// Используем созданный нами класс Rectangle
 			Rectangle r = new Rectangle();
