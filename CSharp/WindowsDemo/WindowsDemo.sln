@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsDemo", "WindowsDemo\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Demo", "WPF_Demo\WPF_Demo.csproj", "{CCB0D435-0414-4991-96A4-9BB357D4CE81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snake", "Snake\Snake.csproj", "{BF451FC1-282F-4A73-9119-FC34D5754AC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,5 +22,9 @@ Global
 		{CCB0D435-0414-4991-96A4-9BB357D4CE81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CCB0D435-0414-4991-96A4-9BB357D4CE81}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CCB0D435-0414-4991-96A4-9BB357D4CE81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF451FC1-282F-4A73-9119-FC34D5754AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF451FC1-282F-4A73-9119-FC34D5754AC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF451FC1-282F-4A73-9119-FC34D5754AC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF451FC1-282F-4A73-9119-FC34D5754AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 EndGlobal

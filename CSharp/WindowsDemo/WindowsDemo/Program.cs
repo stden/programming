@@ -36,8 +36,7 @@ namespace WindowsDemo
 			Square3.Area = 400;
 			Console.WriteLine("Сторона: "+Square3.Side);
 			Square3.Side = 3;
-			Console.WriteLine("Сторона: "+Square3.Side+" Площадь: "+Square3.Area);
-			
+			Console.WriteLine("Сторона: "+Square3.Side+" Площадь: "+Square3.Area);			
 			
 			Console.ReadLine();			
 		}
