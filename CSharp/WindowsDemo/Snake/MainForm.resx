@@ -121,7 +121,7 @@
   <data name="SnakeCellTemplate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAPxJREFUSEvtjcsNwlAQAymEE6IcmqUwagjmrQkv876JxAVhzW3X49Py5UwNXO63
+        vAAADrwBlbxySQAAAPxJREFUSEvtjcsNwlAQAymEE6IcmqUwagjmrQkv876JxAVhzW3X49Py5UwNXO63
         Kj53MxiAsYpfG2kOwDLEtSL1AZTncT8LB1A4gEXvzA48zleAhxy7UjYD+AvgBXgOrEv5DOApgK4FWsLS
         /gAsfdC1dB3AWaA/BHUR5voAypNAEubXAA4CzUkgEfUB1HYB1X+gBKpfHRCoTQKJ8EC5geYkkIS5PiBQ
         HoK6CLMHFJzRH4K6CG1zQEDRAUVhaT6g4CmAC+A5sC5lPBDAK/CQY13KZkDB6wEseocDCgq7sCJLZSCC
@@ -131,7 +131,7 @@
   <data name="FoodTemplate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAQ1JREFUSEvNjcERgkAQBM3Mr3Eaj4GYBU6xw6nNHgsopVP9gZudPg0Hpys4X26B
+        vAAADrwBlbxySQAAAQ1JREFUSEvNjcERgkAQBM3Mr3Eaj4GYBU6xw6nNHgsopVP9gZudPg0Hpys4X26B
         vzspaxS0gzluTMFrw89T3gSoztlUizwFKH2IR5sAz18hlruC0/Uu8DOl14zlXBA3Dbw2ypoF+CtwKVAI
         0BEo5ALcBOgIFAJ0NgjE1o74M8EaMJULBM7Wgx0L5g6crQQjsfwjgcBxCc5FLFug4Bn3JTj36IJAYGIB
         HAqPvgoUlASGUnAiPDemEAjMAZQDz415EyioBhhtoBZ4aAoFCg4CTAsUAk+8JBEoOAt2rCu5QMFxic9m

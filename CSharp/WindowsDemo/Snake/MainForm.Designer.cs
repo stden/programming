@@ -1,4 +1,7 @@
-﻿namespace Snake
+﻿using System.Windows.Forms;
+using Snake.Model;
+
+namespace Snake
 {
 	partial class MainForm
 	{
@@ -84,9 +87,9 @@
 			this.Controls.Add(this.FoodTemplate);
 			this.Controls.Add(this.SnakeCellTemplate);
 			this.Controls.Add(this.startGameButton);
+			this.KeyPreview = true;
 			this.Name = "MainForm";
 			this.Text = "Змейка";
-			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainFormKeyDown);
 			((System.ComponentModel.ISupportInitialize)(this.SnakeCellTemplate)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.FoodTemplate)).EndInit();
 			this.ResumeLayout(false);
@@ -107,9 +110,32 @@
 			snake.Move();
 		}
 		
-		void MainFormKeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+		// Обработчик нажатий "стрелок" на клавиатуре
+		protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
 		{
-			// Обработчик нажатий
+			// Для всех обрабатываемых клавиш возвращаем true
+			if (keyData == Keys.Left)
+			{
+				snake.turnHead(Direction.Left);
+				return true;
+			}
+			else if (keyData == Keys.Right)
+			{
+				snake.turnHead(Direction.Right);
+				return true;
+			}
+			else if (keyData == Keys.Up)
+			{
+				snake.turnHead(Direction.Up);
+				return true;
+			}
+			else if (keyData == Keys.Down)
+			{
+				snake.turnHead(Direction.Down);
+				return true;
+			}
+			else
+				return base.ProcessCmdKey(ref msg, keyData);
 		}
 	}
 }

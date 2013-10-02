@@ -54,5 +54,14 @@ namespace Snake.Model
 			}
 			head.UpdatePictureLocation();
 		}
+		
+		/// <summary>
+		/// Повернуть голову
+		/// </summary>
+		/// <param name="dir">Направление</param>
+		public void turnHead(Direction dir)
+		{
+			direction = dir;			
+		}
 	}
 }
