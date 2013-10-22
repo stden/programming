@@ -1,50 +1,61 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using Snake.Model;
 
 namespace Snake
 {
-	/// <summary>
-	/// Description of MainForm.
-	/// </summary>
-	public partial class MainForm : Form
-	{
-		private SnakeObject snake;
-		int fieldHeight;
-		int fieldWidth;
-		
-		public MainForm()
-		{
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
-			InitializeComponent();
-			
-			StartGame();
-		}
-		
-		public void StartGame() {
-			// Высота поля клетки
-			fieldHeight = this.ClientSize.Height / SnakeCellTemplate.Height;
-			// Ширина поля клетки			
-			fieldWidth = this.ClientSize.Width / SnakeCellTemplate.Width;
-			Console.WriteLine("" + fieldHeight + " x " + fieldWidth);
-			
-			Food.template = FoodTemplate;
-            SnakeCell.template = SnakeCellTemplate;			
-				
-			snake = new SnakeObject(fieldWidth / 2, fieldHeight / 2);
-			
-			foreach(SnakeCell cell in snake.cells){
-				Controls.Add(cell.picture);
-			}
-			Food food = new Food(fieldWidth / 2 + 3, fieldHeight / 2 + 2);
-			Controls.Add(food.picture);
-			
-			Food food2 = new Food(fieldWidth / 2 + 5, fieldHeight / 2 - 2);
-			Controls.Add(food2.picture);
-		}
-	}
+    /// <summary>
+    /// Основная форма
+    /// </summary>
+    public partial class MainForm : Form, SnakeEvents, MapEvents
+    {
+        public MainForm()
+        {
+            //
+            // The InitializeComponent() call is required for Windows Forms designer support.
+            //
+            InitializeComponent();
+
+            StartGame();
+        }
+
+        public void Добавить(PictureBox picture)
+        {
+            Controls.Add(picture);
+        }
+
+        public void Убрать(PictureBox picture)
+        {
+            Controls.Remove(picture);
+        }
+
+        public void StartGame()
+        {
+            // Высота поля клетки
+            Поле.высота = ClientSize.Height/SnakeCellTemplate.Height;
+            // Ширина поля клетки			
+            Поле.ширина = ClientSize.Width/SnakeCellTemplate.Width;
+
+            Food.Template = FoodTemplate;
+            SnakeCell.template = SnakeCellTemplate;
+
+            Поле.змейка = new Змейка(Поле.ширина/2, Поле.высота/2, this);
+
+            foreach (SnakeCell cell in Поле.змейка.cells)
+            {
+                Controls.Add(cell.picture);
+            }
+            Поле.форма = this;
+            Поле.CreateFood(Поле.ширина/2 + 3, Поле.высота/2 + 2);
+            Поле.CreateFood(Поле.ширина/2 + 5, Поле.высота/2 - 2);
+        }
+
+        public void KillSnake()
+        {
+            // Удалим с формы все клетки змейки
+            foreach (SnakeCell cell in Поле.змейка.cells)
+            {
+                Controls.Remove(cell.picture);
+            }
+        }
+    }
 }
