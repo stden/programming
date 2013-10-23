@@ -117,22 +117,22 @@ namespace Snake
 			// Для всех обрабатываемых клавиш возвращаем true
 			if (keyData == Keys.Left)
 			{
-                Поле.змейка.turnHead(Direction.Left);
+                Поле.Змейка.TurnHead(Direction.Left);
 				return true;
 			}
 			else if (keyData == Keys.Right)
 			{
-                Поле.змейка.turnHead(Direction.Right);
+                Поле.Змейка.TurnHead(Direction.Right);
 				return true;
 			}
 			else if (keyData == Keys.Up)
 			{
-                Поле.змейка.turnHead(Direction.Up);
+                Поле.Змейка.TurnHead(Direction.Up);
 				return true;
 			}
 			else if (keyData == Keys.Down)
 			{
-                Поле.змейка.turnHead(Direction.Down);
+                Поле.Змейка.TurnHead(Direction.Down);
 				return true;
 			}
 			else

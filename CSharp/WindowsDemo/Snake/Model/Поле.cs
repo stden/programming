@@ -6,52 +6,55 @@ namespace Snake.Model
     /// <summary>
     ///     Карта (поле)
     /// </summary>
-    internal class Поле
+    internal static class Поле
     {
-        public static int высота;
-        public static int ширина;
+        public static int Высота;
+        public static int Ширина;
 
-        internal static Змейка змейка;
+        internal static Змейка Змейка;
 
         /// <summary>
         ///     Еда на поле
         /// </summary>
-        public static List<Food> food = new List<Food>();
+        public static List<Food> Food = new List<Food>();
 
-        public static MapEvents форма;
+        public static IMapEvents Форма;
 
-        private static readonly Random random = new Random();
+        /// <summary>
+        ///     Генератор случайных чисел
+        /// </summary>
+        private static readonly Random Random = new Random();
 
         /// <summary>
         ///     Находится ли голова змейки в пределах поля?
         /// </summary>
-        /// <param name="head"></param>
-        public static bool головаВПределахПоля(SnakeCell head)
+        /// <param name="head">Голова змейки</param>
+        public static bool ГоловаВПределахПоля(SnakeCell head)
         {
             // Проверить, что x головы находится в пределах 1..ширина
-            if (head.x < 1 || head.x > ширина)
+            if (head.X < 1 || head.X > Ширина)
                 return false;
             // Проверить, что y головы находится в пределах 1..высота
-            if (head.y < 1 || head.y > высота)
+            if (head.Y < 1 || head.Y > Высота)
                 return false;
             return true;
         }
 
         public static void Move()
         {
-            змейка.Move();
-            for (int i = 0; i < food.Count; i++)
+            Змейка.Move();
+            for (int i = 0; i < Food.Count; i++)
             {
-                food[i].Move();
-                if (food[i].надоУбрать())
+                Food[i].Move();
+                if (Food[i].НадоУбрать())
                 {
-                    KillFood(food[i]);
+                    KillFood(Food[i]);
                 }
             }
             // Время от времени должна появляться еда в случайной точке поля
-            if (random.Next(4) == 0) // Раз в сколько-то ходов появляется еда
+            if (Random.Next(4) == 0) // Раз в сколько-то ходов появляется еда
             {
-                CreateFood(random.Next(ширина) + 1, random.Next(высота) + 1);
+                CreateFood(Random.Next(Ширина) + 1, Random.Next(Высота) + 1);
             }
 
             // TODO: Проверять, что змея сьела еду и вызывать у змеи метод "вырасти на клетку"
@@ -61,14 +64,14 @@ namespace Snake.Model
         public static void CreateFood(int x, int y)
         {
             var food = new Food(x, y);
-            форма.Добавить(food.picture);
-            Поле.food.Add(food);
+            Форма.ДобавитьКартинку(food.Picture);
+            Food.Add(food);
         }
 
         public static void KillFood(Food food)
         {
-            форма.Убрать(food.picture);
-            Поле.food.Remove(food);
+            Форма.УбратьКартинку(food.Picture);
+            Food.Remove(food);
         }
     }
 }

@@ -7,10 +7,10 @@ namespace Snake.Model
     /// </summary>
     public class SnakeCell : Cell
     {
-        // Шаблон ячейки такого типа 
-        public static PictureBox template;
+        // Картинка-шаблон для клетки змейки 
+        public static PictureBox Template;
 
-        public SnakeCell(int x, int y) : base(x, y, template)
+        public SnakeCell(int x, int y) : base(x, y, Template)
         {
         }
     }

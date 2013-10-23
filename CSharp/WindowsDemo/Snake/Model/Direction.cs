@@ -5,9 +5,9 @@
     /// </summary>
     public enum Direction
     {
-        Up,
-        Down,
-        Left,
-        Right
+        Up, // Вверх
+        Down, // Вниз
+        Left, // Влево
+        Right // Вправо
     }
 }

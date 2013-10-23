@@ -1,6 +1,6 @@
 ﻿namespace Snake.Model
 {
-    public interface SnakeEvents
+    public interface ISnakeEvents
     {
         void StartGame();
         void KillSnake();

@@ -4,9 +4,9 @@ using Snake.Model;
 namespace Snake
 {
     /// <summary>
-    /// Основная форма
+    ///     Основная форма
     /// </summary>
-    public partial class MainForm : Form, SnakeEvents, MapEvents
+    public partial class MainForm : Form, ISnakeEvents, IMapEvents
     {
         public MainForm()
         {
@@ -18,12 +18,12 @@ namespace Snake
             StartGame();
         }
 
-        public void Добавить(PictureBox picture)
+        public void ДобавитьКартинку(PictureBox picture)
         {
             Controls.Add(picture);
         }
 
-        public void Убрать(PictureBox picture)
+        public void УбратьКартинку(PictureBox picture)
         {
             Controls.Remove(picture);
         }
@@ -31,30 +31,30 @@ namespace Snake
         public void StartGame()
         {
             // Высота поля клетки
-            Поле.высота = ClientSize.Height/SnakeCellTemplate.Height;
+            Поле.Высота = ClientSize.Height/SnakeCellTemplate.Height;
             // Ширина поля клетки			
-            Поле.ширина = ClientSize.Width/SnakeCellTemplate.Width;
+            Поле.Ширина = ClientSize.Width/SnakeCellTemplate.Width;
 
             Food.Template = FoodTemplate;
-            SnakeCell.template = SnakeCellTemplate;
+            SnakeCell.Template = SnakeCellTemplate;
 
-            Поле.змейка = new Змейка(Поле.ширина/2, Поле.высота/2, this);
+            Поле.Змейка = new Змейка(Поле.Ширина/2, Поле.Высота/2, this);
 
-            foreach (SnakeCell cell in Поле.змейка.cells)
+            foreach (SnakeCell cell in Поле.Змейка.Cells)
             {
-                Controls.Add(cell.picture);
+                Controls.Add(cell.Picture);
             }
-            Поле.форма = this;
-            Поле.CreateFood(Поле.ширина/2 + 3, Поле.высота/2 + 2);
-            Поле.CreateFood(Поле.ширина/2 + 5, Поле.высота/2 - 2);
+            Поле.Форма = this;
+            Поле.CreateFood(Поле.Ширина/2 + 3, Поле.Высота/2 + 2);
+            Поле.CreateFood(Поле.Ширина/2 + 5, Поле.Высота/2 - 2);
         }
 
         public void KillSnake()
         {
             // Удалим с формы все клетки змейки
-            foreach (SnakeCell cell in Поле.змейка.cells)
+            foreach (SnakeCell cell in Поле.Змейка.Cells)
             {
-                Controls.Remove(cell.picture);
+                Controls.Remove(cell.Picture);
             }
         }
     }

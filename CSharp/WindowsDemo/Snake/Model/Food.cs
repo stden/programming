@@ -22,7 +22,7 @@ namespace Snake.Model
             _time++;
         }
 
-        public bool надоУбрать()
+        public bool НадоУбрать()
         {
             return _time > 4;
         }

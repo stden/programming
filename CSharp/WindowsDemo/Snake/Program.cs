@@ -4,12 +4,12 @@ using System.Windows.Forms;
 namespace Snake
 {
     /// <summary>
-    ///     Class with program entry point.
+    ///     Класс с точкой входа в программу
     /// </summary>
     internal sealed class Program
     {
         /// <summary>
-        ///     Program entry point.
+        ///     Точка входа в программу
         /// </summary>
         [STAThread]
         private static void Main(string[] args)

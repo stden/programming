@@ -8,7 +8,7 @@ namespace Snake.Model
     public class Змейка
     {
         // Змейка состоит из нескольких клеток
-        private readonly SnakeEvents snakeEvents;
+        private readonly ISnakeEvents _snakeEvents;
         public List<SnakeCell> Cells = new List<SnakeCell>();
 
         // Поворот головы
@@ -20,9 +20,10 @@ namespace Snake.Model
         /// </summary>
         /// <param name="x">x-координата головы змеи</param>
         /// <param name="y">y-координата головы змеи</param>
-        public Змейка(int x, int y, SnakeEvents snakeEvents)
+        /// <param name="snakeEvents"></param>
+        public Змейка(int x, int y, ISnakeEvents snakeEvents)
         {
-            this.snakeEvents = snakeEvents;
+            _snakeEvents = snakeEvents;
             Direction = Direction.Right;
 
             Cells.Clear();
@@ -39,8 +40,8 @@ namespace Snake.Model
             // Двигаем все остальные ячейки
             for (int i = Cells.Count - 1; i > 0; i--)
             {
-                Cells[i].x = Cells[i - 1].x;
-                Cells[i].y = Cells[i - 1].y;
+                Cells[i].X = Cells[i - 1].X;
+                Cells[i].Y = Cells[i - 1].Y;
                 Cells[i].UpdatePictureLocation();
             }
             // Двигаем голову
@@ -48,25 +49,24 @@ namespace Snake.Model
             switch (Direction)
             {
                 case Direction.Up:
-                    head.y--;
+                    head.Y--;
                     break;
                 case Direction.Down:
-                    head.y++;
+                    head.Y++;
                     break;
                 case Direction.Left:
-                    head.x--;
+                    head.X--;
                     break;
                 case Direction.Right:
-                    head.x++;
+                    head.X++;
                     break;
             }
             head.UpdatePictureLocation();
 
-            if (!Поле.головаВПределахПоля(head))
-            {
-                snakeEvents.KillSnake();
-                snakeEvents.StartGame();
-            }
+            if (Поле.ГоловаВПределахПоля(head)) return;
+
+            _snakeEvents.KillSnake();
+            _snakeEvents.StartGame();
         }
 
         /// <summary>
