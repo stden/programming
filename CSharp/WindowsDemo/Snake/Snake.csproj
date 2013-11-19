@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="F.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
