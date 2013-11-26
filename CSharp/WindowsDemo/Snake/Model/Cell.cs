@@ -28,6 +28,8 @@ namespace Snake.Model
             Y = y;
 
             Picture = new PictureBox {Image = template.Image, Width = template.Width, Height = template.Height};
+            
+            Поле.Форма.ДобавитьКартинку(Picture);
 
             UpdatePictureLocation();
         }
@@ -38,5 +40,11 @@ namespace Snake.Model
             Picture.Location =
                 new Point(X*Picture.Image.Width, Y*Picture.Image.Height);
         }
+        
+        // Две ячейки находятся в одном месте на поле
+        public bool SamePlace(Cell cell)
+        {
+            return X == cell.X && Y == cell.Y;
+        }        
     }
 }

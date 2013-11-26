@@ -12,13 +12,13 @@ namespace Snake.Tests
         [TestFixtureSetUp]
         public void Init()
         {
-            // TODO: Add Init code.
+            // Инициализация тестов (тот код, который выполняется до каждого теста)
         }
 
         [TestFixtureTearDown]
         public void Dispose()
         {
-            // TODO: Add tear down code.
+            // Освобождение ресурсов (код, который выполняется после каждого теста)
         }
 
         /// <summary>

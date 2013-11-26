@@ -16,7 +16,7 @@ namespace Snake.Model
         /// <summary>
         ///     Еда на поле
         /// </summary>
-        public static List<Food> Food = new List<Food>();
+        public static List<Food> food = new List<Food>();
 
         public static IMapEvents Форма;
 
@@ -40,15 +40,18 @@ namespace Snake.Model
             return true;
         }
 
+        /// <summary>
+        /// Общий "ход", "ходят" змейка, еда (все кто участвует в игровом процессе)
+        /// </summary>
         public static void Move()
         {
             Змейка.Move();
-            for (int i = 0; i < Food.Count; i++)
+            for (int i = 0; i < food.Count; i++)
             {
-                Food[i].Move();
-                if (Food[i].НадоУбрать())
+                food[i].Move();
+                if (food[i].НадоУбрать())
                 {
-                    KillFood(Food[i]);
+                    KillFood(food[i]);
                 }
             }
             // Время от времени должна появляться еда в случайной точке поля
@@ -57,21 +60,33 @@ namespace Snake.Model
                 CreateFood(Random.Next(Ширина) + 1, Random.Next(Высота) + 1);
             }
 
-            // TODO: Проверять, что змея сьела еду и вызывать у змеи метод "вырасти на клетку"
+            // Проверять, что змея сьела еду и вызывать у змеи метод "вырасти на клетку"
+            // Сравниваем координаты "Еды" и головы змеи
+            foreach(Food f in food){
+                SnakeCell голова = Змейка.Cells[0];
+                if(f.X == голова.X && f.Y == голова.Y){
+                    // Процесс съедания 
+                    Змейка.Вырасти();
+                    // Уничтожаем еду
+                    KillFood(f);
+                    break;
+                }
+            }  
+            //             
         }
 
 
         public static void CreateFood(int x, int y)
         {
-            var food = new Food(x, y);
-            Форма.ДобавитьКартинку(food.Picture);
-            Food.Add(food);
+            var f = new Food(x, y);
+            Форма.ДобавитьКартинку(f.Picture);
+            food.Add(f);
         }
 
-        public static void KillFood(Food food)
+        public static void KillFood(Food f)
         {
-            Форма.УбратьКартинку(food.Picture);
-            Food.Remove(food);
+            Форма.УбратьКартинку(f.Picture);
+            food.Remove(f);
         }
     }
 }

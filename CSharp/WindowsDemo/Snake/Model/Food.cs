@@ -3,10 +3,13 @@
 namespace Snake.Model
 {
     /// <summary>
-    ///     Еда для змейки
+    /// Еда для змейки
     /// </summary>
     public class Food : Cell
     {
+        // Время до "пропадания" еды
+        const int foodLife = 20;  
+            
         // Шаблон ячейки такого типа 
         public static PictureBox Template;
 
@@ -24,7 +27,7 @@ namespace Snake.Model
 
         public bool НадоУбрать()
         {
-            return _time > 4;
+            return _time > foodLife;
         }
     }
 }

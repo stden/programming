@@ -38,19 +38,20 @@ namespace Snake
             Food.Template = FoodTemplate;
             SnakeCell.Template = SnakeCellTemplate;
 
+            Поле.Форма = this;
+            
             Поле.Змейка = new Змейка(Поле.Ширина/2, Поле.Высота/2, this);
 
-            foreach (SnakeCell cell in Поле.Змейка.Cells)
-            {
-                Controls.Add(cell.Picture);
-            }
-            Поле.Форма = this;
             Поле.CreateFood(Поле.Ширина/2 + 3, Поле.Высота/2 + 2);
             Поле.CreateFood(Поле.Ширина/2 + 5, Поле.Высота/2 - 2);
         }
 
         public void KillSnake()
         {
+            timer1.Enabled = false;
+            MessageBox.Show("Игра окончена!");
+            timer1.Enabled = true;
+            
             // Удалим с формы все клетки змейки
             foreach (SnakeCell cell in Поле.Змейка.Cells)
             {

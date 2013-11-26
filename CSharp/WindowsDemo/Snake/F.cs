@@ -21,6 +21,11 @@ namespace Snake
             return 1;
         }
 
+        /// <summary>
+        /// Вычисление чисел Фибоначчи при помощи кеша значений
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
         public static long Fibonacci(int n)
         {
             // Если значение уже вычислялось => сразу возвращаем его            

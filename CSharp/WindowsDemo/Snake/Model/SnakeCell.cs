@@ -12,6 +12,6 @@ namespace Snake.Model
 
         public SnakeCell(int x, int y) : base(x, y, Template)
         {
-        }
+        }        
     }
 }
