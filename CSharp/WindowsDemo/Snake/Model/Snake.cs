@@ -23,6 +23,7 @@ namespace Snake.Model
         /// <param name="snakeEvents"></param>
         public Змейка(int x, int y, ISnakeEvents snakeEvents)
         {
+            _grownUp = 0;
             _snakeEvents = snakeEvents;
             Direction = Direction.Right;
 
@@ -40,11 +41,11 @@ namespace Snake.Model
             int lastCell = Cells.Count - 1;
             
             // Реализуем рост змеи (добавляем в конец копию последней клетки)
-            if(grownUp > 0){
+            if(_grownUp > 0){
                 SnakeCell tail = Cells[lastCell];
                 Cells.Add(new SnakeCell(tail.X, tail.Y));
                 
-                grownUp--;               
+                _grownUp--;               
             }
             
             // Двигаем все остальные ячейки
@@ -77,14 +78,14 @@ namespace Snake.Model
             // Если голова совпала по координатам с другой клеткой, то закачиваем игру
             for(int i=1; i < Cells.Count; i++)
                 if(Cells[i].SamePlace(head)){
-                   _snakeEvents.KillSnake();
+                   _snakeEvents.GameOver("Змейка пересеклась сама с собой!");
                    _snakeEvents.StartGame();
                    return;                                
                 }
 
             if (Поле.ГоловаВПределахПоля(head)) return;
 
-            _snakeEvents.KillSnake();
+            _snakeEvents.GameOver("За пределами поля!");
             _snakeEvents.StartGame();
         }
 
@@ -98,12 +99,12 @@ namespace Snake.Model
         }
         
         // Насколько клеток предстоит вырасти змейке
-        int grownUp = 0; 
+        int _grownUp; 
         
         public void Вырасти()
         {
             // Змейке удобно расти когда она двигается, а потому сейчас просто запоминаем, насколько надо вырасти
-            grownUp++;    
+            _grownUp++;    
         }
     }
 }

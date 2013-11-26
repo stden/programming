@@ -46,11 +46,13 @@ namespace Snake
             Поле.CreateFood(Поле.Ширина/2 + 5, Поле.Высота/2 - 2);
         }
 
-        public void KillSnake()
+        public void GameOver(string gameResult)
         {
-            timer1.Enabled = false;
-            MessageBox.Show("Игра окончена!");
-            timer1.Enabled = true;
+            gameTimer.Enabled = false;
+            
+            MessageBox.Show("Игра окончена! "+gameResult);
+            
+            gameTimer.Enabled = true;
             
             // Удалим с формы все клетки змейки
             foreach (SnakeCell cell in Поле.Змейка.Cells)

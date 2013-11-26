@@ -3,6 +3,6 @@
     public interface ISnakeEvents
     {
         void StartGame();
-        void KillSnake();
+        void GameOver(string gameResult);
     }
 }

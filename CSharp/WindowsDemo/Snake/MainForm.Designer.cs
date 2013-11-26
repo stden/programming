@@ -36,7 +36,7 @@ namespace Snake
             this.startGameButton = new System.Windows.Forms.Button();
             this.SnakeCellTemplate = new System.Windows.Forms.PictureBox();
             this.FoodTemplate = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.SnakeCellTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodTemplate)).BeginInit();
             this.SuspendLayout();
@@ -75,9 +75,9 @@ namespace Snake
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 300;
-            this.timer1.Tick += new System.EventHandler(this.Timer1Tick);
+            this.gameTimer.Enabled = true;
+            this.gameTimer.Interval = 300;
+            this.gameTimer.Tick += new System.EventHandler(this.Timer1Tick);
             // 
             // MainForm
             // 
@@ -96,7 +96,7 @@ namespace Snake
             this.PerformLayout();
 
 		}
-		private System.Windows.Forms.Timer timer1;
+		private System.Windows.Forms.Timer gameTimer;
 		private System.Windows.Forms.PictureBox FoodTemplate;
 		private System.Windows.Forms.PictureBox SnakeCellTemplate;
 		private System.Windows.Forms.Button startGameButton;
